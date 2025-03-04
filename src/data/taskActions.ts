@@ -16,20 +16,6 @@ export async function browseTasks() {
 	}
 }
 
-export async function searchTasks(query: string) {
-	try {
-		console.log(query);
-		const tasks = await db
-			.select()
-			.from(tasksTable)
-			.where(sql`${tasksTable.label} LIKE ${`%${query}%`}`);
-
-		return tasks;
-	} catch (error) {
-		console.error("Database Error :", error);
-	}
-}
-
 export async function readTask(id: string) {
 	try {
 		const result = await db
@@ -43,7 +29,6 @@ export async function readTask(id: string) {
 }
 
 export async function editTask(id: string, formdata: FormData) {
-	console.log(formdata);
 	const data = {
 		label: formdata.get("label") as string | null,
 		status: formdata.get("status") as string | null,
@@ -93,4 +78,17 @@ export async function deleteTask(id: string) {
 		console.error("Database Error:", error);
 	}
 	revalidatePath("/");
+}
+
+export async function searchTasks(query: string) {
+	try {
+		const tasks = await db
+			.select()
+			.from(tasksTable)
+			.where(sql`${tasksTable.label} LIKE ${`%${query}%`}`);
+
+		return tasks;
+	} catch (error) {
+		console.error("Database Error :", error);
+	}
 }

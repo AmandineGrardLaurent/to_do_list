@@ -1,5 +1,5 @@
 import { FormEditTask } from "@/components/FormEditTask";
-import { readTask } from "@/data/task";
+import { readTask } from "@/data/taskActions";
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;

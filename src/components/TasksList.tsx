@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ButtonDeleteTask } from "./ButtonDeleteTask";
-import { searchTasks } from "@/data/task";
-import { formatDateToLocal } from "@/app/helpers/helpers";
+import { searchTasks } from "@/data/taskActions";
+import clsx from "clsx";
 
 export async function TasksList({ query }: { query: string }) {
   const tasks = await searchTasks(query);
@@ -12,12 +12,15 @@ export async function TasksList({ query }: { query: string }) {
         {tasks?.map((task) => (
           <li
             key={task.id}
-            className="border border-pink-400 flex flex-row gap-3 p-2 "
+            className={clsx("border flex flex-row gap-3 p-2 ", {
+              "bg-green-200 border-green-200": task.status === "fait",
+            })}
           >
             <p>{task.label}</p>
-
             <p>- {task.status}</p>
-            <p>avant le {formatDateToLocal(task.date)}</p>
+            {task.status === "à faire" && (
+              <p>avant le : {new Date(task.date).toLocaleDateString()}</p>
+            )}
             <Link href={`/${task.id}/edit`}> &#x1F58D;</Link>
             <ButtonDeleteTask id={task.id} />
           </li>

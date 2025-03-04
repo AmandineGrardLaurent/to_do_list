@@ -1,6 +1,6 @@
 "use client";
 
-import { editTask } from "@/data/task";
+import { editTask } from "@/data/taskActions";
 import Link from "next/link";
 
 export function FormEditTask({ task }: { task: TaskType[] }) {
