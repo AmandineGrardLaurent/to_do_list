@@ -14,10 +14,12 @@ export async function TasksList({ query }: { query: string }) {
             key={task.id}
             className={clsx("border flex flex-row gap-3 p-2 ", {
               "bg-green-200 border-green-200": task.status === "fait",
+              "bg-red-200  border-red-200": task.status === "à faire",
             })}
           >
-            <p>{task.label}</p>
-            <p>- {task.status}</p>
+            <p>
+              {task.label} - {task.status}
+            </p>
             {task.status === "à faire" && (
               <p>avant le : {new Date(task.date).toLocaleDateString()}</p>
             )}
