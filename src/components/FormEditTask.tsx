@@ -3,10 +3,10 @@
 import { editTask } from "@/data/taskActions";
 import Link from "next/link";
 
-export function FormEditTask({ task }: { task: TaskType[] }) {
-  const id = task[0].id;
+export function FormEditTask({ task }: { task: TaskType }) {
+  const id = task.id;
   const formAction = editTask.bind(null, id);
-  console.log(id);
+  console.log(task);
   return (
     <form action={formAction} className="flex flex-col mt-6">
       <label htmlFor="label" className="flex flex-col">
@@ -17,7 +17,7 @@ export function FormEditTask({ task }: { task: TaskType[] }) {
           type="text"
           placeholder="Tâche à réaliser"
           required
-          defaultValue={task[0].label}
+          defaultValue={task.label}
           className="border border-gray-300"
         />
       </label>
@@ -27,6 +27,7 @@ export function FormEditTask({ task }: { task: TaskType[] }) {
           id="date"
           name="date"
           type="date"
+          // defaultValue={task.date}
           required
           className="border border-gray-300"
         />
@@ -40,7 +41,7 @@ export function FormEditTask({ task }: { task: TaskType[] }) {
             name="status"
             value="à faire"
             type="radio"
-            defaultChecked={task[0].status === "à faire"}
+            defaultChecked={task.status === "à faire"}
           />
         </label>
         <label>
@@ -50,7 +51,7 @@ export function FormEditTask({ task }: { task: TaskType[] }) {
             name="status"
             value="fait"
             type="radio"
-            defaultChecked={task[0].status === "fait"}
+            defaultChecked={task.status === "fait"}
           />
         </label>
       </fieldset>

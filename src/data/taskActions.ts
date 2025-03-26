@@ -28,10 +28,10 @@ export async function readTask(id: string) {
 	}
 }
 
-export async function editTask(id: string, formdata: FormData) {
+export async function editTask(id: number, formdata: FormData) {
 	const data = {
 		label: formdata.get("label") as string | null,
-		status: formdata.get("status") as string | null,
+		status: formdata.get("status") as "à faire" | "fait",
 		date: formdata.get("date") as Date | null,
 	};
 
@@ -71,7 +71,7 @@ export async function addTask(formdata: FormData) {
 	redirect("/");
 }
 
-export async function deleteTask(id: string) {
+export async function deleteTask(id: number) {
 	try {
 		await db.delete(tasksTable).where(eq(tasksTable.id, id));
 	} catch (error) {
