@@ -1,4 +1,4 @@
-import { addTask } from "@/data/taskActions";
+import { addTask } from "@/actions/task";
 import Link from "next/link";
 
 export function FormCreateTask() {

@@ -1,4 +1,4 @@
-import { FormCreateTask } from "@/components/FormCreateTask";
+import { FormCreateTask } from "./ui/FormCreateTask";
 
 export default function Page() {
   return (

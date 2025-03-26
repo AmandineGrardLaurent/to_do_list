@@ -1,7 +1,7 @@
 "use server";
 
-import { db } from "@/db/connexion";
-import { tasksTable } from "@/db/schema";
+import { db } from "@/database/connexion";
+import { tasksTable } from "@/database/schema";
 import "dotenv/config";
 import { sql, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";

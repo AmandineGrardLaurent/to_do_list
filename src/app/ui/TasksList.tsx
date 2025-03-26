@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ButtonDeleteTask } from "./ButtonDeleteTask";
-import { searchTasks } from "@/data/taskActions";
+import { searchTasks } from "@/actions/task";
 import clsx from "clsx";
 
 export async function TasksList({ query }: { query: string }) {

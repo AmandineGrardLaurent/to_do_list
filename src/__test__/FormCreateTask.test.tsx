@@ -1,9 +1,9 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { FormCreateTask } from "@/components/FormCreateTask";
+import { FormCreateTask } from "@/app/create/ui/FormCreateTask";
 import { describe, expect, it, test, vi } from "vitest";
 import "@testing-library/jest-dom/vitest";
-import { addTask } from "@/data/taskActions";
+import { addTask } from "@/actions/task";
 
 vi.mock("@/data/taskActions", () => ({
   addTask: vi.fn(),

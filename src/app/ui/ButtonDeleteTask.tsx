@@ -1,4 +1,4 @@
-import { deleteTask } from "@/data/taskActions";
+import { deleteTask } from "@/actions/task";
 
 export function ButtonDeleteTask({ id }: { id: number }) {
   const deleteId = deleteTask.bind(null, id);
