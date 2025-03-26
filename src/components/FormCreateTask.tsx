@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function FormCreateTask() {
   const formAction = addTask;
-  console.log(formAction);
+  console.log(addTask);
   return (
     <form action={formAction} className="flex flex-col mt-6">
       <label htmlFor="label" className="flex flex-col">
