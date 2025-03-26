@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
-import { ButtonCreateTask } from "../ButtonCreateTask";
+import { ButtonCreateTask } from "../app/ui/ButtonCreateTask";
 
 test("affichage du lien et du texte createTask", () => {
   render(<ButtonCreateTask />);

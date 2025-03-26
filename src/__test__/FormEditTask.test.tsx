@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, test, vi } from "vitest";
 import "@testing-library/jest-dom/vitest";
-import { FormEditTask } from "../FormEditTask";
-import { editTask } from "@/data/taskActions";
+import { FormEditTask } from "../app/[id]/edit/ui/FormEditTask";
+import { editTask } from "@/actions/task";
 
 const mockTask = [
   {

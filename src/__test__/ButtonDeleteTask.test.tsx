@@ -2,8 +2,8 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import "@testing-library/jest-dom/vitest";
-import { ButtonDeleteTask } from "../ButtonDeleteTask";
-import { deleteTask } from "@/data/taskActions";
+import { ButtonDeleteTask } from "../app/ui/ButtonDeleteTask";
+import { deleteTask } from "@/actions/task";
 import { beforeEach } from "vitest";
 
 vi.mock("@/data/taskActions", () => ({

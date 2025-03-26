@@ -1,6 +1,6 @@
 import { expect, vi } from "vitest";
-import { addTask, browseTasks, deleteTask, editTask } from "@/data/taskActions";
-import { db } from "@/db/connexion";
+import { addTask, browseTasks, deleteTask, editTask } from "@/actions/task";
+import { db } from "@/database/connexion";
 import { redirect } from "next/navigation";
 import { describe } from "vitest";
 import { it } from "vitest";

@@ -1,5 +1,5 @@
-import { FormEditTask } from "@/components/FormEditTask";
-import { readTask } from "@/data/taskActions";
+import { FormEditTask } from "@/app/[id]/edit/ui/FormEditTask";
+import { readTask } from "@/actions/task";
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
@@ -12,7 +12,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
         <h1 className="text-center font-bold text-3xl font-mono">
           Modification de la tâche
         </h1>
-        <FormEditTask task={task[0]} />
+        {task && <FormEditTask task={task[0]} />}
       </section>
     </div>
   );

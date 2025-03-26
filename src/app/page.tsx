@@ -1,7 +1,7 @@
-import { ButtonCreateTask } from "@/components/ButtonCreateTask";
-import { TasksList } from "@/components/TasksList";
+import { ButtonCreateTask } from "@/app/ui/ButtonCreateTask";
+import { TasksList } from "@/app/ui/TasksList";
 import "./globals.css";
-import SearchTask from "@/components/SearchTask";
+import SearchTask from "./ui/SearchTask";
 
 export default async function Page(props: {
   searchParams?: Promise<{

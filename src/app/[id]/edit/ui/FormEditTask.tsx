@@ -1,12 +1,12 @@
 "use client";
 
-import { editTask } from "@/data/taskActions";
+import { editTask } from "@/actions/task";
 import Link from "next/link";
 
 export function FormEditTask({ task }: { task: TaskType }) {
   const id = task.id;
   const formAction = editTask.bind(null, id);
-  console.log(task);
+
   return (
     <form action={formAction} className="flex flex-col mt-6">
       <label htmlFor="label" className="flex flex-col">
